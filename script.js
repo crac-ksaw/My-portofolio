@@ -204,6 +204,7 @@ cursor.style.cssText = `
 `;
 document.body.appendChild(cursor);
 
+// Mouse events for desktop
 document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX - 10 + 'px';
     cursor.style.top = e.clientY - 10 + 'px';
@@ -211,6 +212,31 @@ document.addEventListener('mousemove', (e) => {
 });
 
 document.addEventListener('mouseout', () => {
+    cursor.style.opacity = '0';
+});
+
+// Touch events for mobile
+document.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    cursor.style.left = touch.clientX - 10 + 'px';
+    cursor.style.top = touch.clientY - 10 + 'px';
+    cursor.style.opacity = '1';
+});
+
+document.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    cursor.style.left = touch.clientX - 10 + 'px';
+    cursor.style.top = touch.clientY - 10 + 'px';
+    cursor.style.opacity = '1';
+});
+
+document.addEventListener('touchend', (e) => {
+    cursor.style.opacity = '0';
+});
+
+document.addEventListener('touchcancel', (e) => {
     cursor.style.opacity = '0';
 });
 
