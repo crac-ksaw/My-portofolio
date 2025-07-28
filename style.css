@@ -80,6 +80,7 @@ nav.scrolled {
     font-weight: 700;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.3s ease;
 }
@@ -162,6 +163,7 @@ nav.scrolled {
     margin-bottom: 1rem;
     background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient 3s ease-in-out infinite;
     background-size: 300% 300%;
@@ -250,6 +252,7 @@ section {
     margin-bottom: 3rem;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -413,6 +416,30 @@ section {
     font-size: 1.3rem;
     margin-bottom: 1rem;
     color: var(--accent);
+}
+
+.project-content h4 a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.project-content h4 a:hover {
+    color: var(--primary);
+    transform: translateX(5px);
+}
+
+.project-content h4 a::after {
+    content: '🔗';
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.project-content h4 a:hover::after {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .project-tags {
