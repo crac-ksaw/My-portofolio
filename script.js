@@ -8,6 +8,31 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Mobile menu functionality
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+});
+
+// Close mobile menu when clicking on links
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.innerHTML = '☰';
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navbar.contains(e.target) && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.innerHTML = '☰';
+    }
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -233,62 +258,6 @@ document.head.appendChild(particleStyle);
 // Create particles periodically
 setInterval(createParticle, 3000);
 
-// Add mobile menu toggle
-const navLinks = document.querySelector('.nav-links');
-const menuToggle = document.createElement('div');
-menuToggle.className = 'menu-toggle';
-menuToggle.innerHTML = '☰';
-menuToggle.style.cssText = `
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--light);
-    @media (max-width: 768px) {
-        display: block;
-    }
-`;
-// Add menu toggle styles
-const mobileStyle = document.createElement('style');
-mobileStyle.textContent = `
-    @media (max-width: 768px) {
-        .menu-toggle {
-            display: block !important;
-        }
-        .nav-links {
-            position: fixed;
-            top: 70px;
-            left: -100%;
-            width: 100%;
-            height: calc(100vh - 70px);
-            background: rgba(15, 23, 42, 0.95);
-            flex-direction: column;
-            justify-content: start;
-            align-items: center;
-            padding-top: 2rem;
-            transition: left 0.3s ease;
-            backdrop-filter: blur(20px);
-        }
-        .nav-links.active {
-            left: 0;
-        }
-        .nav-links li {
-            margin: 1rem 0;
-        }
-    }
-`;
-document.head.appendChild(mobileStyle);
-document.querySelector('.nav-container').appendChild(menuToggle);
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuToggle.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
-});
-// Close mobile menu when clicking on links
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        menuToggle.innerHTML = '☰';
-    });
-});
 // Add scroll progress indicator
 const progressBar = document.createElement('div');
 progressBar.style.cssText = `
