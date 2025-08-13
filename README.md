@@ -61,15 +61,6 @@ Portofolio/
 
 ---
 
-## 🖼️ Screenshots
-> _Add your own screenshots here!_
-
-| Home | Projects | Contact |
-|------|----------|---------|
-| ![](assets/screenshot-home.png) | ![](assets/screenshot-projects.png) | ![](assets/screenshot-contact.png) |
-
----
-
 ## 🧰 Built With
 - HTML5 & CSS3
 - JavaScript (Vanilla)
@@ -84,3 +75,4 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 > Made with ❤️ by Partha Sinha 
+
