@@ -57,7 +57,7 @@ Portofolio/
 
 ## 📬 Contact
 - **Email:** parthasinha078@gmail.com
-- **LinkedIn:** [linkedin.com/in/partha-sinha]((https://www.linkedin.com/in/partha-sinha-472ab636b/))
+- **LinkedIn:** [linkedin.com/in/partha-sinha](https://www.linkedin.com/in/partha-sinha-472ab636b/)
 
 ---
 
