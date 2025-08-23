@@ -57,7 +57,7 @@ Portofolio/
 
 ## 📬 Contact
 - **Email:** parthasinha078@gmail.com
-- **LinkedIn:** [linkedin.com/in/partha-sinha](https://linkedin.com/in/partha-sinha)
+- **LinkedIn:** [linkedin.com/in/partha-sinha]((https://www.linkedin.com/in/partha-sinha-472ab636b/))
 
 ---
 
@@ -65,7 +65,6 @@ Portofolio/
 - HTML5 & CSS3
 - JavaScript (Vanilla)
 - [Formspree](https://formspree.io/) (Contact form)
-- [Streamlit](https://streamlit.io/) (for Fake News Detection demo)
 
 ---
 
@@ -75,4 +74,5 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 > Made with ❤️ by Partha Sinha 
+
 
