@@ -1,432 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partha Sinha - Creative Developer</title>
-    <link rel="icon" type="image/png" href="assets/Title logo.png">
-    <link rel="stylesheet" href="style.css">
+    <title>Partha Sinha | Creative Developer</title>
+    <meta name="description" content="Portfolio of Partha Sinha, software engineer crafting immersive web experiences, AI products, and data-rich digital systems.">
+    <link rel="icon" type="image/png" href="./assets/Title logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-    <div class="bg-animation"></div>
-
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">PS</div>
-            <div class="menu-toggle" id="menuToggle">☰</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-inner">
+            <p class="loader-label">Loading portfolio</p>
+            <div class="loader-counter" id="loaderCounter">0</div>
         </div>
-    </nav>
+    </div>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Partha Sinha</h1>
-            <p class="subtitle">Software Engineer & AI Enthusiast</p>
-            <p class="description">
-                Passionate about building innovative web applications and AI-powered solutions.
-                Specializing in Python, and modern web technologies to create impactful digital experiences.
-            </p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            </div>
-        </div>
-    </section>
+    <div class="webgl-stage" id="webglStage" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
 
-    <section id="about" class="animate-on-scroll">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-image">
-                <img src="./assets/my photo .jpg" alt="Partha Sinha">
-            </div>
-            <div class="about-text">
-                <h3>I am a Software Developer and AI Enthusiast</h3>
-                <p>
-                    I earned my Bachelor of Computer Application from Assam DownTown University. My passion lies in
-                    creating web applications, AI solutions, and systems driven by data. I got into tech because I
-                    wanted to solve real-world problems using code and data.
-                </p>
-                <p>
-                    My expertise includes Python, JavaScript, modern web technologies, and data analytics. Working with
-                    datasets is something I love; finding patterns and sharing insights with tools like SQL, Pandas,
-                    Power BI, and various visualization libraries excites me. Outside of coding or data analysis, you
-                    might find me delving into tech mysteries or digital forensics or perhaps binge-watching
-                    hacker-themed series just for fun.
-                </p>
-                <div class="cta-buttons">
-                    <a href="./assets/Partha Sinha- Resume.pdf" class="btn btn-primary" download>Download Resume</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <header class="site-header" id="siteHeader">
+        <a class="brand" href="#hero">
+            <span class="brand-mark">PS</span>
+            <span class="brand-text">Partha Sinha</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-controls="siteNav" aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="site-nav" id="siteNav">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <section id="skills" class="animate-on-scroll">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h4>Programming Languages</h4>
-                <div class="skill-bar">
-                    <span>Python</span>
-                    <div class="progress">
-                        <div class="progress-fill" style="width: 90%"></div>
+    <main id="app">
+        <section class="hero-section section" id="hero">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow section-subheading">Creative developer, AI builder, systems thinker</p>
+                    <h1 class="hero-title">Interfaces with cinematic motion. Products with engineering depth.</h1>
+                    <p class="hero-description reveal-block">
+                        I build web experiences that feel precise, tactile, and performance-aware, spanning immersive
+                        frontend work, AI-powered applications, and data-driven systems designed for actual use.
+                    </p>
+                    <div class="hero-actions reveal-block">
+                        <a class="button button-primary" href="#projects">View selected work</a>
+                        <a class="button button-secondary" href="./assets/Partha Sinha - Resume.pdf" download>Download resume</a>
                     </div>
                 </div>
-                <div class="skill-bar">
-                    <span>JavaScript</span>
-                    <div class="progress">
-                        <div class="progress-fill" style="width: 85%"></div>
+                <div class="hero-visual">
+                    <div class="hero-portrait panel reveal-block">
+                        <img src="./assets/my photo .jpg" alt="Portrait of Partha Sinha">
                     </div>
-                </div>
-                <div class="skill-bar">
-                    <span>C</span>
-                    <div class="progress">
-                        <div class="progress-fill" style="width: 40%"></div>
+                    <div class="hero-signal panel">
+                        <span class="signal-label">Current focus</span>
+                        <strong class="signal-value">High-fidelity product interfaces with AI-native behaviors</strong>
                     </div>
+                    <svg class="hero-signature" viewBox="0 0 560 560" fill="none" aria-hidden="true">
+                        <path class="draw-path" d="M119 294C141 176 262 101 377 131C492 161 549 291 500 398C451 505 317 545 213 500C130 464 98 392 119 294Z" />
+                        <path class="draw-path" d="M182 244C226 185 304 167 374 195C440 222 478 287 468 349C458 412 400 469 326 476C253 483 193 441 168 379C145 324 149 286 182 244Z" />
+                    </svg>
                 </div>
             </div>
+        </section>
 
-            <div class="skill-category">
-                <h4>Web Development</h4>
-                <div class="skill-bar">
-                    <span>HTML / CSS</span>
-                    <div class="progress">
-                        <div class="progress-fill" style="width: 88%"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <span>Node.js / Express</span>
-                    <div class="progress">
-                        <div class="progress-fill" style="width: 85%"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <span>React</span>
-                    <div class="progress">
-                        <div class="progress-fill" style="width: 82%"></div>
-                    </div>
-                </div>
+        <section class="about-section section" id="about">
+            <div class="section-heading-wrap">
+                <p class="eyebrow section-subheading">About</p>
+                <h2 class="section-heading">Building clarity, momentum, and visual confidence into every product surface.</h2>
             </div>
+            <div class="about-grid">
+                <article class="about-card panel reveal-block">
+                    <p>
+                        I earned my Bachelor of Computer Application from Assam DownTown University and moved quickly
+                        toward work where code solves real operational problems rather than staying theoretical.
+                    </p>
+                </article>
+                <article class="about-card panel reveal-block">
+                    <p>
+                        My practice sits across frontend systems, backend services, analytics workflows, and AI-assisted
+                        product experiences, always aiming for a sharper user feel rather than just technical completion.
+                    </p>
+                </article>
+                <article class="about-card panel reveal-block">
+                    <p>
+                        I care about the layer where interface choreography, information architecture, and engineering
+                        quality reinforce each other and turn a simple site into a memorable experience.
+                    </p>
+                </article>
+            </div>
+        </section>
 
-            <div class="skill-category">
-                <h4>AI & Data Science</h4>
-                <div class="skill-bar">
-                    <span>BERT / NLP</span>
-                    <div class="progress">
-                        <div class="progress-fill" style="width: 50%"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <span>Pandas / NumPy</span>
-                    <div class="progress">
-                        <div class="progress-fill" style="width: 40%"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <span>SQL</span>
-                    <div class="progress">
-                        <div class="progress-fill" style="width: 75%"></div>
-                    </div>
-                </div>
+        <section class="skills-section section" id="skills">
+            <div class="section-heading-wrap">
+                <p class="eyebrow section-subheading">Capabilities</p>
+                <h2 class="section-heading">A balanced stack for expressive interfaces and solid application logic.</h2>
             </div>
-        </div>
-        </div>
-    </section>
+            <div class="skills-grid">
+                <article class="skill-card panel reveal-block">
+                    <span class="skill-index">01</span>
+                    <h3>Frontend systems</h3>
+                    <p>Responsive UI architecture, motion design, interaction polish, and layout systems with strong visual intent.</p>
+                    <div class="skill-bar">
+                        <div class="skill-meta"><span>HTML / CSS / JavaScript</span><span>92%</span></div>
+                        <div class="skill-track"><span class="skill-fill" data-width="92%"></span></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-meta"><span>React UI patterns</span><span>84%</span></div>
+                        <div class="skill-track"><span class="skill-fill" data-width="84%"></span></div>
+                    </div>
+                </article>
+                <article class="skill-card panel reveal-block">
+                    <span class="skill-index">02</span>
+                    <h3>Backend and data</h3>
+                    <p>APIs, persistence layers, automation, and analytics pipelines that support usable product decisions.</p>
+                    <div class="skill-bar">
+                        <div class="skill-meta"><span>Python / Node.js</span><span>88%</span></div>
+                        <div class="skill-track"><span class="skill-fill" data-width="88%"></span></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-meta"><span>SQL / Data analysis</span><span>79%</span></div>
+                        <div class="skill-track"><span class="skill-fill" data-width="79%"></span></div>
+                    </div>
+                </article>
+                <article class="skill-card panel reveal-block">
+                    <span class="skill-index">03</span>
+                    <h3>AI product work</h3>
+                    <p>NLP, model integration, observability, and workflows that make AI features practical and measurable.</p>
+                    <div class="skill-bar">
+                        <div class="skill-meta"><span>BERT / NLP workflows</span><span>73%</span></div>
+                        <div class="skill-track"><span class="skill-fill" data-width="73%"></span></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-meta"><span>LLM application design</span><span>76%</span></div>
+                        <div class="skill-track"><span class="skill-fill" data-width="76%"></span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    <section id="projects" class="animate-on-scroll">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="./images/tokenlens-overview.svg" alt="TokenLens - LLM Cost Intelligence"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="project-content">
-                    <h4><a href="https://github.com/crac-ksaw/tokenlens" target="_blank"
-                            rel="noopener noreferrer" style="color: inherit; text-decoration: none;">🔗 TokenLens</a></h4>
-                    <p>An open-source cost intelligence platform for teams deploying LLM features, providing real-time tracking, cost enrichment, and budget management.</p>
-                    <p style="font-size: 0.9rem; color: #10b981; margin-top: 0.5rem;"><strong>Key Features:</strong><br>
-                        • Multi-Provider Tracking (OpenAI, Anthropic, Gemini, Bedrock)<br>
-                        • Asynchronous Enrichment (Redis Streams)<br>
-                        • Budget Guardrails (Automated kill-switches)<br>
-                        • Anomaly Detection (Z-score baseline)</p>
-                    <div class="project-tags">
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Redis</span>
-                        <span class="tag">PostgreSQL</span>
-                    </div>
-                    <a href="https://github.com/crac-ksaw/tokenlens" class="github-link" target="_blank"
-                        rel="noopener noreferrer">
-                        <img src="./assets/github-mark-white.png" alt="GitHub"
-                            style="width: 24px; height: 24px; position: absolute; bottom: 20px; right: 20px; opacity: 0.8; transition: opacity 0.3s ease;">
-                    </a>
-                </div>
+        <section class="projects-section section" id="projects">
+            <div class="projects-header">
+                <p class="eyebrow section-subheading">Selected work</p>
+                <h2 class="section-heading">A horizontal reel of systems, products, and experiments.</h2>
             </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="./images/olist-dashboard.png" alt="Olist E-Commerce Analysis"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="project-content">
-                    <h4><a href="https://crac-ksaw-olist-analysis-srcdashboard-app-a6keww.streamlit.app" target="_blank"
-                            rel="noopener noreferrer" style="color: inherit; text-decoration: none;">🔗 Olist E-Commerce
-                            Analysis</a></h4>
-                    <p>An end-to-end data analytics project exploring 100k+ orders from the Olist Brazilian E-Commerce
-                        dataset.</p>
-                    <p style="font-size: 0.9rem; color: #10b981; margin-top: 0.5rem;"><strong>Key Features:</strong><br>
-                        • Interactive Streamlit Dashboard<br>
-                        • English Normalization of categories<br>
-                        • Real-time Executive KPIs<br>
-                        • Customer Segmentation Analysis</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Streamlit</span>
-                        <span class="tag">Pandas</span>
-                        <span class="tag">Data Analysis</span>
+            <div class="projects-track" id="projectsTrack">
+                <article class="project-card panel">
+                    <div class="project-media">
+                        <img class="project-image" src="./assets/images/tokenlens-overview.svg" alt="TokenLens overview">
                     </div>
-                    <a href="https://github.com/crac-ksaw/olist-analysis" class="github-link" target="_blank"
-                        rel="noopener noreferrer">
-                        <img src="./assets/github-mark-white.png" alt="GitHub"
-                            style="width: 24px; height: 24px; position: absolute; bottom: 20px; right: 20px; opacity: 0.8; transition: opacity 0.3s ease;">
-                    </a>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="./images/Fake news detector.png" alt="Fake News Detection System"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="project-content">
-                    <h4><a href="https://fake-news-detection-ap3hkteuckdpfs6djpfpxq.streamlit.app" target="_blank"
-                            rel="noopener noreferrer" style="color: inherit; text-decoration: none;">🔗 Fake News
-                            Detection System</a></h4>
-                    <p>Built a fake news classification web app using Streamlit, powered by a fine-tuned BERT model for
-                        natural language processing with Groq AI API integration.</p>
-                    <p style="font-size: 0.9rem; color: #10b981; margin-top: 0.5rem;"><strong>Key Features:</strong><br>
-                        • BERT-based NLP model for text classification<br>
-                        • Groq AI API integration for enhanced accuracy<br>
-                        • Real-time news analysis and classification<br>
-                        • User-friendly Streamlit interface</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">BERT</span>
-                        <span class="tag">Streamlit</span>
-                        <span class="tag">NLP</span>
+                    <div class="project-copy">
+                        <span class="project-kicker">Cost intelligence platform</span>
+                        <h3>TokenLens</h3>
+                        <p>Real-time LLM cost tracking, budget guardrails, anomaly detection, and provider-wide observability for AI teams.</p>
+                        <div class="project-tags">
+                            <span>TypeScript</span>
+                            <span>React</span>
+                            <span>Redis</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <a href="https://github.com/crac-ksaw/tokenlens" target="_blank" rel="noopener noreferrer">Open repository</a>
                     </div>
-                    <a href="https://github.com/crac-ksaw/Fake-News-Detection" class="github-link" target="_blank"
-                        rel="noopener noreferrer">
-                        <img src="./assets/github-mark-white.png" alt="GitHub"
-                            style="width: 24px; height: 24px; position: absolute; bottom: 10px; right: 20px; opacity: 0.8; transition: opacity 0.3s ease;">
-                    </a>
-                </div>
+                </article>
+                <article class="project-card panel">
+                    <div class="project-media">
+                        <img class="project-image" src="./assets/images/olist-dashboard.png" alt="Olist dashboard">
+                    </div>
+                    <div class="project-copy">
+                        <span class="project-kicker">Analytics dashboard</span>
+                        <h3>Olist E-Commerce Analysis</h3>
+                        <p>Executive dashboard and exploratory analysis over 100k+ e-commerce orders with KPI storytelling and segmentation.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Streamlit</span>
+                            <span>Pandas</span>
+                            <span>Insights</span>
+                        </div>
+                        <a href="https://crac-ksaw-olist-analysis-srcdashboard-app-a6keww.streamlit.app" target="_blank" rel="noopener noreferrer">View live demo</a>
+                    </div>
+                </article>
+                <article class="project-card panel">
+                    <div class="project-media">
+                        <img class="project-image" src="./assets/images/Fake news detector.png" alt="Fake news detection interface">
+                    </div>
+                    <div class="project-copy">
+                        <span class="project-kicker">NLP product</span>
+                        <h3>Fake News Detection System</h3>
+                        <p>Classification interface built around a fine-tuned BERT model with AI-assisted workflows for clearer verification.</p>
+                        <div class="project-tags">
+                            <span>BERT</span>
+                            <span>Streamlit</span>
+                            <span>Groq API</span>
+                            <span>NLP</span>
+                        </div>
+                        <a href="https://fake-news-detection-ap3hkteuckdpfs6djpfpxq.streamlit.app" target="_blank" rel="noopener noreferrer">View live demo</a>
+                    </div>
+                </article>
+                <article class="project-card panel">
+                    <div class="project-media">
+                        <img class="project-image" src="./assets/images/Leave management system.png" alt="Employee leave management interface">
+                    </div>
+                    <div class="project-copy">
+                        <span class="project-kicker">Full-stack application</span>
+                        <h3>Employee Leave Management</h3>
+                        <p>Role-based leave platform with balance tracking, approval flows, and backend logic aligned to realistic team usage.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>REST API</span>
+                        </div>
+                        <a href="https://employeeleave.netlify.app" target="_blank" rel="noopener noreferrer">View live demo</a>
+                    </div>
+                </article>
             </div>
+        </section>
 
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="./images/Leave management system.png" alt="Employee Leave Management System"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="project-content">
-                    <h4><a href="https://employeeleave.netlify.app" target="_blank" rel="noopener noreferrer"
-                            style="color: inherit; text-decoration: none;">🔗 Employee Leave Management System</a></h4>
-                    <p>Developed a full-stack leave management system with role-based authentication, RESTful APIs, and
-                        real-time leave balance updates.</p>
-                    <p style="font-size: 0.9rem; color: #10b981; margin-top: 0.5rem;"><strong>Demo
-                            Credentials:</strong><br>
-                        Employee: username: employee1, password: heroke<br>
-                        Manager: username: kennyblinder, password: heroke098</p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">Express.js</span>
-                    </div>
-                    <a href="https://github.com/crac-ksaw/leave-management" class="github-link" target="_blank"
-                        rel="noopener noreferrer">
-                        <img src="./assets/github-mark-white.png" alt="GitHub"
-                            style="width: 24px; height: 24px; position: absolute; bottom: 20px; right: 20px; opacity: 0.8; transition: opacity 0.3s ease;">
-                    </a>
-                </div>
+        <section class="process-section section">
+            <div class="section-heading-wrap">
+                <p class="eyebrow section-subheading">Process</p>
+                <h2 class="section-heading">Scroll-driven sections that feel authored, not assembled.</h2>
             </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="./images/ecommerce-admin-panel.png" alt="E-commerce Admin Panel with RBAC"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="project-content">
-                    <h4><a href="https://github.com/crac-ksaw/Ecommerce_Admin_Panel_with_RBAC" target="_blank"
-                            rel="noopener noreferrer" style="color: inherit; text-decoration: none;">🔗 E-commerce Admin
-                            Panel (RBAC)</a></h4>
-                    <p>Full-stack admin panel with role-based access control for product management, built with
-                        Node.js/Express backend, React frontend, and PostgreSQL database.</p>
-                    <p style="font-size: 0.9rem; color: #10b981; margin-top: 0.5rem;"><strong>Key
-                            Features:</strong><br>
-                        • JWT Authentication with bcrypt<br>
-                        • Role-Based Access Control (Admin / Sales)<br>
-                        • Product CRUD with Soft Delete<br>
-                        • Zod Validation & Prisma ORM</p>
-                    <p style="font-size: 0.9rem; color: #10b981; margin-top: 0.5rem;"><strong>Demo
-                            Credentials:</strong><br>
-                        Admin: admin@example.com / Admin#123<br>
-                        Sales: sales@example.com / Sales#123</p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">PostgreSQL</span>
-                    </div>
-                    <a href="https://github.com/crac-ksaw/Ecommerce_Admin_Panel_with_RBAC" class="github-link"
-                        target="_blank" rel="noopener noreferrer">
-                        <img src="./assets/github-mark-white.png" alt="GitHub"
-                            style="width: 24px; height: 24px; position: absolute; bottom: 20px; right: 20px; opacity: 0.8; transition: opacity 0.3s ease;">
-                    </a>
-                </div>
+            <div class="process-panels">
+                <article class="process-card panel">
+                    <span>01</span>
+                    <h3>Observe the system</h3>
+                    <p>Map the business problem, user state, and interaction pressure points before touching visuals.</p>
+                </article>
+                <article class="process-card panel">
+                    <span>02</span>
+                    <h3>Design the flow</h3>
+                    <p>Use motion, spacing, type, and contrast to make each section feel connected rather than isolated.</p>
+                </article>
+                <article class="process-card panel">
+                    <span>03</span>
+                    <h3>Engineer the details</h3>
+                    <p>Performance-aware builds, usable states, and animation systems that stay maintainable after launch.</p>
+                </article>
             </div>
+        </section>
 
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="./images/banner.png" alt="Discord Bot"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="project-content">
-                    <h4><a href="https://tinyurl.com/53jrr65y" target="_blank" rel="noopener noreferrer"
-                            style="color: inherit; text-decoration: none;">🔗 Discord Bot</h4>
-                    <p>Developed a custom Discord bot using Discord.py and Integrated AI for normal conversation and
-                        Image generation from simple text also used for personalized servers to welcome new users.</p>
-                    <p style="font-size: 0.9rem; color: #10b981; margin-top: 0.5rem;"><strong>Bot Features:</strong><br>
-                        • AI integration Chat Bot<br>
-                        • Stable diffusion AI image generator<br>
-                        • Embedded messages with server rules and guidelines<br>
-                        • Customizable greeting templates<br>
-                        • Automated welcome messages for new members</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Discord.py</span>
-                        <span class="tag">Bot Development</span>
-                        <span class="tag">API</span>
-                    </div>
-                    <a href="https://github.com/crac-ksaw/discord-bot" class="github-link" target="_blank"
-                        rel="noopener noreferrer">
-                        <img src="./assets/github-mark-white.png" alt="GitHub"
-                            style="width: 24px; height: 24px; position: absolute; bottom: 22px; right: 20px; opacity: 0.8; transition: opacity 0.3s ease;">
-                    </a>
-                </div>
+        <section class="contact-section section" id="contact">
+            <div class="section-heading-wrap">
+                <p class="eyebrow section-subheading">Contact</p>
+                <h2 class="section-heading">If the product needs intent in every layer, let's talk.</h2>
             </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="./images/Green wisdom.png" alt="Green Wisdom - Plant Benefits Blog"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="project-content">
-                    <h4><a href="https://crac-ksaw.github.io/Green-wisdom/" target="_blank" rel="noopener noreferrer"
-                            style="color: inherit; text-decoration: none;">🔗 Green Wisdom - Plant Benefits Blog</a>
-                    </h4>
-                    <p>A beautiful, modern website dedicated to exploring the wonders of plants, their benefits, and
-                        their impact on our lives and environment.</p>
-                    <p style="font-size: 0.9rem; color: #10b981; margin-top: 0.5rem;"><strong>Website
-                            Features:</strong><br>
-                        • Responsive design with glass-morphism effects<br>
-                        • Educational content about plant benefits<br>
-                        • Modern UI with smooth animations<br>
-                        • Mobile-friendly interface</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">Responsive Design</span>
-                        <span class="tag">Glass-morphism</span>
+            <div class="contact-grid">
+                <div class="contact-copy reveal-block">
+                    <p>
+                        Available for frontend-heavy product work, immersive portfolio builds, AI-assisted interfaces,
+                        dashboards, and full-stack implementation where craft matters as much as function.
+                    </p>
+                    <div class="contact-lines">
+                        <a href="mailto:parthasinha078@gmail.com">parthasinha078@gmail.com</a>
+                        <a href="tel:+917099978298">+91 7099978298</a>
+                        <a href="https://www.linkedin.com/in/partha-sinha-472ab636b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <span>Guwahati, Assam</span>
                     </div>
-                    <a href="https://github.com/crac-ksaw/Green-wisdom" class="github-link" target="_blank"
-                        rel="noopener noreferrer">
-                        <img src="./assets/github-mark-white.png" alt="GitHub"
-                            style="width: 24px; height: 24px; position: absolute; bottom: 20px; right: 20px; opacity: 0.8; transition: opacity 0.3s ease;">
-                    </a>
                 </div>
+                <form class="contact-form panel reveal-block" action="https://formspree.io/f/mjkownlk" method="POST">
+                    <label>
+                        <span>Name</span>
+                        <input type="text" name="name" required>
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email" required>
+                    </label>
+                    <label>
+                        <span>Project type</span>
+                        <input type="text" name="subject" required>
+                    </label>
+                    <label>
+                        <span>Project brief</span>
+                        <textarea name="message" rows="5" required></textarea>
+                    </label>
+                    <button class="button button-primary" type="submit">Start a conversation</button>
+                    <p class="form-status" aria-live="polite"></p>
+                </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="contact" class="animate-on-scroll">
-        <h2 class="section-title">Let's Work Together</h2>
-        <div class="contact-container">
-            <form class="contact-form" action="https://formspree.io/f/mjkownlk" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div>
-                        <h4>Email</h4>
-                        <p>parthasinha078@gmail.com</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <div>
-                        <h4>Phone</h4>
-                        <p>+91 7099978298</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div>
-                        <h4>Location</h4>
-                        <p>Guwahati, Assam</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">💼</div>
-                    <div>
-                        <h4>LinkedIn</h4>
-                        <p>
-                            <a href="https://www.linkedin.com/in/partha-sinha-472ab636b/" target="_blank">
-                                https://www.linkedin.com/in/partha-sinha
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="social-links">
-            <a href="#" class="social-link">📧</a>
-            <a href="#" class="social-link">💼</a>
-            <a href="#" class="social-link">🐙</a>
-            <a href="#" class="social-link">🐦</a>
-        </div>
-        <p>&copy; 2025 Partha Sinha. All rights reserved.</p>
+    <footer class="site-footer">
+        <a class="footer-magnet" id="footerMagnet" href="mailto:parthasinha078@gmail.com">Let's Talk</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
+    <script src="./js/core.js"></script>
+    <script src="./js/cursor.js"></script>
+    <script src="./js/text.js"></script>
+    <script src="./js/webgl.js"></script>
+    <script src="./js/animations.js"></script>
 </body>
-
 </html>
